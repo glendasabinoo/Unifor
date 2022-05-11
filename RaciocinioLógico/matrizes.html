@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //“Um grupo de alunos cursa uma certa quantidade de disciplinas em uma renomada universidade. Ao final do semestre, o coordenador do curso deseja ter acesso à quantidade total de pontuações maiores que 8 e você foi responsável por essa tarefa.”
+
+    var qtdDisciplinas = parseInt(prompt('Digite a quantidade de disciplinas'));
+    var qtdAlunos = parseInt(prompt('Digite a quantidade de alunos'));
+    var matriz = [];
+    var soma = 0;
+
+    for(var i = 0; i<qtdDisciplinas;i++) {
+        matriz[i] = [];
+        for(var j = 0; j < qtdAlunos; j++) {
+            matriz[i][j] = parseFloat(prompt('Digite a nota do aluno ' + (j+1) + ' para a disciplina ' + (i+1) + ':'))
+        }
+    }
+
+    for(var i=0; i<matriz.length; i++) {
+        for(var j = 0; j < matriz[i].length; j++) {
+            document.write(matriz[i][j] + ',');
+        }
+        document.write('<br>');  
+    } 
+
+    for(var i=0; i<matriz.length; i++) {
+        for(var j=0; j<matriz[i].length;j++) {
+            if(matriz[i][j] > 8) {
+                soma++;
+            }
+        }
+    } 
+    document.write('Total de notas maiores que 8: ' + soma);
+    
+    </script>
+</body>
+</html>

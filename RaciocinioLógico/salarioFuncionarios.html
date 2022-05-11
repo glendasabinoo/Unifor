@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       var tipoFuncionario = prompt('Olá! Digite E se for estagiário ou V se for vendedor.');
+       var diasTrabalhados;
+       var totalVendas;
+       var comissao;
+       var salario;
+
+       if(tipoFuncionario == 'E' || tipoFuncionario == 'e') {
+            diasTrabalhados = parseInt(prompt('Digite o número de dias trabalhados'));
+            salario = 30 * diasTrabalhados;
+            document.write('Seu salário é: ' + salario);
+       } else if(tipoFuncionario == 'V' || tipoFuncionario == 'v') {
+            totalVendas = parseFloat(prompt('Digite o total de vendas feitas (em reais)'));
+            comissao = 0.10 * totalVendas;
+            salario = 600 + comissao;
+            document.write('Seu salário é: ' + salario);
+       }
+   </script> 
+</body>
+</html>

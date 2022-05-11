@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var vet = [];
+    var n = parseInt(prompt('quantidade de elementos'));
+    for (var i = 0; i < n; i++) {
+        vet[i] = parseInt(prompt('digite um inteiro'));
+    }
+    var pos = n-1;
+    for (var i = 0; i < n/2; i++) {
+        var aux = vet[i];
+        vet[i] = vet[pos];
+        vet[pos] = aux;
+        pos = pos - 1;
+    }
+    document.write('Vetor invertido: ' + vet);
+       
+    </script>
+</body>
+</html>
