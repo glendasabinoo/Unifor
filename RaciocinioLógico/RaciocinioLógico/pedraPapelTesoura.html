@@ -1,0 +1,71 @@
+<script>
+var jogarNovamente = false;    
+var usuario;
+
+do {
+    alert('Vamos jogar pedra, papel e tesoura?')
+        if(prompt('Digite 1 para iniciar o jogo') == 1)
+        {
+            alert('Escolha uma opção: ');
+            usuario = prompt('1 - Pedra; 2 - Papel; 3 - Tesoura');
+        if(usuario == 1) {
+            alert('Você escolheu pedra');
+        } else if (usuario == 2) {
+            alert('Você escolheu papel');
+        } else if(usuario == 3) {
+            alert('Você escolheu tesoura');
+        }
+    }
+
+    function maquina()
+    {
+        var numeroAleatorio = Math.floor(Math.random() * 3);
+        if(numeroAleatorio == 0 && usuario == 1)
+        {
+            alert('Máquina escolheu pedra');
+            alert('Empate');
+        } 
+        if (numeroAleatorio == 0 && usuario == 2) {
+            alert('Máquina escolheu pedra');
+            alert('Usuário venceu');
+        } 
+        if (numeroAleatorio == 0 && usuario == 3) {
+            alert('Maquina escolheu pedra');
+            alert('Máquina venceu');
+        }  
+        if (numeroAleatorio == 1 && usuário == 1) {
+            alert('Maquina escolheu papel');
+            alert('Máquina venceu');
+        }  
+        if(numeroAleatorio == 1 && usuario == 2) {
+            alert('Máquina escolheu papel');
+            alert('Empate');
+        }
+        if (numeroAleatorio == 1 && usuario == 3) {
+            alert('Máquina escolheu papel');
+            alert('Usuário venceu');
+        } 
+        if (numeroAleatorio == 2 && usuario == 1) {
+            alert('Máquina escolheu tesoura');
+            alert('Usuário venceu');
+        } 
+        if(numeroAleatorio == 2 && usuario == 2) {
+            alert('Máquina escolheu tesoura');
+            alert('Máquina venceu');
+        } 
+        if(numeroAleatorio == 2 && usuario == 3) {
+            alert('Máquina escolheu tesoura');
+            alert('Usuário venceu');
+        }
+    }  
+    alert(maquina());
+
+    if(prompt('Quer jogar novamente? Digite 1 para sim e 2 para não') == 1) {
+       jogarNovamente = true;
+   } else {
+       jogarNovamente = false;
+       alert('Programa encerrado.')
+   }
+} while (jogarNovamente = true);
+
+</script>

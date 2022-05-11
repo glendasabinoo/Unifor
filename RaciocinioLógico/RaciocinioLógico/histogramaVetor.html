@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Suponha que tenhamos, em 60 anotações presentes em um vetor, a quantidade de chegadas de veículos em um pedágio a cada minuto.
+        //a probabilidade de chegar um determinado número de veículos em um minuto qualquer
+        var chegadas = [1, 2, 1, 0, 2, 1, 0, 1, 2, 0, 2, 3, 1, 3, 1, 3, 4,5, 1, 2, 0, 1, 2, 1, 0, 1, 1, 0, 2, 2, 2, 3, 2, 2, 3, 2, 3, 3, 2,1, 6, 0, 2, 2, 3, 7, 0, 2, 2, 0, 4, 1, 1, 1, 1, 8, 4, 3, 1, 4];
+        var soma = 0;
+        for (var i = 0; i < 60; i++) {
+        soma += + chegadas[i];
+        }
+    //a maior quantidade de veículos que chegam no pedágio em um minuto qualquer
+    var max = Number.NEGATIVE_INFINITY;
+    for (var i = 0; i < 60; i++) {
+        if (chegadas[i] > max) {
+            max = chegadas[i];
+        }
+    }
+    //quantas chegadas ocorrem no vetor chegadas
+    var contagem = [];
+    for (var i = 0; i <= max; i++) {
+        contagem[i] = 0;
+        for (var j = 0; j < 60; j++) {
+            if (chegadas[j] == i) {
+                contagem[i]++;
+            }
+        }
+    }
+    //resultado estatístico que se extrai a partir do histograma
+    var probabilidades = [];
+    for (var i = 0; i <= max; i++) {
+        probabilidades[i] = contagem[i]/soma;
+    }
+    document.write(probabilidades);    
+    </script>
+</body>
+</html>
